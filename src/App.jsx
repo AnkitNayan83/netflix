@@ -1,7 +1,10 @@
+import "./App.scss";
+import { Home } from "./Pages/Home";
+
 function App() {
   return (
     <div className="App">
-      <h1>Netflix</h1>
+      <Home />
     </div>
   );
 }
