@@ -1,5 +1,6 @@
 import { Search, Notifications, ArrowDropDown } from "@mui/icons-material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
 export const Navbar = () => {
@@ -12,11 +13,13 @@ export const Navbar = () => {
     <div className={color ? "navbar scrolled" : "navbar"}>
       <div className="container">
         <div className="navbar-left">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
-            alt=""
-            className="netflix-logo"
-          />
+          <Link to="/">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+              alt=""
+              className="netflix-logo"
+            />
+          </Link>
           <span>Homepage</span>
           <span>Series</span>
           <span>Movies</span>
@@ -35,7 +38,12 @@ export const Navbar = () => {
             <ArrowDropDown className="icons" />
             <div className="options">
               <span>Settings</span>
-              <span>Logout</span>
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <span>Logout</span>
+              </Link>
             </div>
           </div>
         </div>
