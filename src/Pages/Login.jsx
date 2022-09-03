@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.scss";
 
 export const Login = () => {
@@ -30,7 +31,10 @@ export const Login = () => {
           />
           <button>Sign in</button>
           <span>
-            New to netflix <b>Sign up nuw</b>
+            New to netflix
+            <Link className="link" to="/register">
+              <b>Sign up now</b>
+            </Link>
           </span>
           <small>
             This page is protected by Google reCAPTCHA to ensure you're not a

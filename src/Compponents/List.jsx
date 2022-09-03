@@ -6,7 +6,7 @@ import React, { useRef, useState } from "react";
 import "./List.scss";
 import { Listitems } from "./Listitems";
 
-export const List = () => {
+export const List = ({ list }) => {
   const [slideNum, setSlideNum] = useState(0);
   const [show, setShow] = useState(false);
 
@@ -27,7 +27,7 @@ export const List = () => {
 
   return (
     <div className="list">
-      <span className="list-title">Continue to watch</span>
+      <span className="list-title">{list.title}</span>
       <div className="wrapper">
         <ArrowBackIosOutlined
           onClick={() => handelClick("left")}
@@ -36,16 +36,9 @@ export const List = () => {
         />
 
         <div className="container" ref={listRef}>
-          <Listitems index={0} />
-          <Listitems index={1} />
-          <Listitems index={2} />
-          <Listitems index={3} />
-          <Listitems index={4} />
-          <Listitems index={5} />
-          <Listitems index={6} />
-          <Listitems index={7} />
-          <Listitems index={8} />
-          <Listitems index={9} />
+          {list.content.map((listItem, i) => (
+            <Listitems key={i} item={listItem} index={i} />
+          ))}
         </div>
         <ArrowForwardIosOutlined
           onClick={() => handelClick("right")}

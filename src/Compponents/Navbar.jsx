@@ -13,16 +13,22 @@ export const Navbar = () => {
     <div className={color ? "navbar scrolled" : "navbar"}>
       <div className="container">
         <div className="navbar-left">
-          <Link to="/">
+          <Link className="link" to="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
               alt=""
               className="netflix-logo"
             />
           </Link>
-          <span>Homepage</span>
-          <span>Series</span>
-          <span>Movies</span>
+          <Link className="link" to="/">
+            <span>Homepage</span>
+          </Link>
+          <Link className="link" to="/series">
+            <span>Series</span>
+          </Link>
+          <Link className="link" to="/movie">
+            <span>Movies</span>
+          </Link>
           <span>New and Popular</span>
           <span>My List</span>
         </div>
@@ -38,10 +44,7 @@ export const Navbar = () => {
             <ArrowDropDown className="icons" />
             <div className="options">
               <span>Settings</span>
-              <Link
-                to="/login"
-                style={{ textDecoration: "none", color: "white" }}
-              >
+              <Link to="/login" className="link">
                 <span>Logout</span>
               </Link>
             </div>

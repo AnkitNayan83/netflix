@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.scss";
 
 export const Register = () => {
@@ -25,7 +26,9 @@ export const Register = () => {
             alt=""
             className="register-logo"
           />
-          <button>SignIn</button>
+          <Link to="/login">
+            <button>SignIn</button>
+          </Link>
         </div>
       </div>
       <div className="register-container">
