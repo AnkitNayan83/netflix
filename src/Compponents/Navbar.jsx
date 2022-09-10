@@ -1,9 +1,12 @@
 import { Search, Notifications, ArrowDropDown } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { logout } from "../AuthContext/Authactions";
+import { AuthContext } from "../AuthContext/Authcontext";
 import "./Navbar.scss";
 
 export const Navbar = () => {
+  const { user, dispatch } = useContext(AuthContext);
   const [color, setColor] = useState(false);
   window.onscroll = () => {
     setColor(window.pageYOffset === 0 ? false : true);
@@ -36,17 +39,12 @@ export const Navbar = () => {
           <Search className="icons" />
           <span>KID</span>
           <Notifications className="icons" />
-          <img
-            src="https://i.ibb.co/tpPJjB3/Whats-App-Image-2022-06-21-at-5-48-06-PM.jpg"
-            alt=""
-          />
+          <img src={user.profilePic} alt="" />
           <div className="profile">
             <ArrowDropDown className="icons" />
             <div className="options">
               <span>Settings</span>
-              <Link to="/login" className="link">
-                <span>Logout</span>
-              </Link>
+              <span onClick={() => dispatch(logout())}>Logout</span>
             </div>
           </div>
         </div>

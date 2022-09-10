@@ -16,7 +16,7 @@ export const Home = ({ type }) => {
           {
             headers: {
               token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGRjZjhiMWI0NmU3MjkyMTdhOTdjZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MjAwODE4NywiZXhwIjoxNjYyMjY3Mzg3fQ.TsAU2i8CSWeYLEYfXWELFtirbOOTeEQeq3nGF9swLvg",
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGRjZjhiMWI0NmU3MjkyMTdhOTdjZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MjYyNzcxNiwiZXhwIjoxNjYyODg2OTE2fQ.0xpB5cksLu-tJnyKMGPpIvUO-AvR9AopE_foDiTaXKU",
             },
           }
         );
@@ -31,7 +31,7 @@ export const Home = ({ type }) => {
   return (
     <div className="home">
       <Navbar />
-      <Featured type={type} />
+      <Featured type={type} setGenre={setGenre} />
       {lists.map((list) => (
         <List key={list.id} list={list} />
       ))}

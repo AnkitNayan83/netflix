@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { login } from "../AuthContext/apiCalls";
+import { AuthContext } from "../AuthContext/Authcontext";
 import "./Login.scss";
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { dispatch } = useContext(AuthContext);
+
+  const handelLogin = (e) => {
+    e.preventDefault();
+    login({ email, password }, dispatch);
+  };
+
   return (
     <div className="login">
       <div className="top">
@@ -20,16 +31,16 @@ export const Login = () => {
           <input
             type="email"
             name="email"
-            id=""
             placeholder="Enter your email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             name="password"
-            id=""
             placeholder="Enter your password"
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button>Sign in</button>
+          <button onClick={handelLogin}>Sign in</button>
           <span>
             New to netflix
             <Link className="link" to="/register">

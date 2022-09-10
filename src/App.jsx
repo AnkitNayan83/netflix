@@ -4,9 +4,11 @@ import { Home } from "./Pages/Home";
 import { Login } from "./Pages/Login";
 import { Register } from "./Pages/register";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext/Authcontext";
 
 function App() {
-  const user = true;
+  const { user } = useContext(AuthContext);
   return (
     <div className="App">
       <BrowserRouter>
