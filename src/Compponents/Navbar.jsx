@@ -27,18 +27,18 @@ export const Navbar = () => {
             <span>Homepage</span>
           </Link>
           <Link className="link" to="/series">
-            <span>Series</span>
+            <span className="navbar-visible">Series</span>
           </Link>
           <Link className="link" to="/movie">
-            <span>Movies</span>
+            <span className="navbar-visible">Movies</span>
           </Link>
           <span>New and Popular</span>
           <span>My List</span>
         </div>
         <div className="navbar-right">
-          <Search className="icons" />
-          <span>KID</span>
-          <Notifications className="icons" />
+          <Search className="icons remv" />
+          <span className="remv">KID</span>
+          <Notifications className="icons remv" />
           <img src={user.profilePic} alt="" />
           <div className="profile">
             <ArrowDropDown className="icons" />

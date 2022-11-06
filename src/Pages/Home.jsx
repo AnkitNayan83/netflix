@@ -4,6 +4,7 @@ import { List } from "../Compponents/List";
 import { Navbar } from "../Compponents/Navbar";
 import "./Home.scss";
 import axios from "axios";
+import { Footer } from "../Compponents/Footer";
 
 export const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -16,7 +17,7 @@ export const Home = ({ type }) => {
           {
             headers: {
               token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGRjZjhiMWI0NmU3MjkyMTdhOTdjZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MjYyNzcxNiwiZXhwIjoxNjYyODg2OTE2fQ.0xpB5cksLu-tJnyKMGPpIvUO-AvR9AopE_foDiTaXKU",
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGRjZjhiMWI0NmU3MjkyMTdhOTdjZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MzczNjI4NCwiZXhwIjoxNjYzOTk1NDg0fQ.sUzSpkt74Pa-UtekQrdudT7G-ArNQR-hwYw248wkKy0",
             },
           }
         );
@@ -35,6 +36,7 @@ export const Home = ({ type }) => {
       {lists.map((list) => (
         <List key={list.id} list={list} />
       ))}
+      <Footer />
     </div>
   );
 };

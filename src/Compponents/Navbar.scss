@@ -1,3 +1,4 @@
+@import "../App.scss";
 .navbar {
   color: white;
   font-size: 14px;
@@ -28,6 +29,14 @@
       span {
         margin-right: 20px;
         cursor: pointer;
+        @include mobile {
+          display: none;
+        }
+        &.navbar-visible {
+          @include mobile {
+            display: block;
+          }
+        }
       }
     }
     .navbar-right {
@@ -43,6 +52,11 @@
       .icons {
         margin: 0 15px;
         cursor: pointer;
+      }
+      .remv {
+        @include mobile {
+          display: none;
+        }
       }
 
       .profile {

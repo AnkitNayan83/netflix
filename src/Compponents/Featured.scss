@@ -1,6 +1,10 @@
+@import "../App.scss";
 .featured {
   position: relative;
   height: 90vh;
+  @include mobile {
+    height: 70vh;
+  }
 
   .category {
     position: absolute;
@@ -35,14 +39,23 @@
     bottom: 140px;
     left: 50px;
     color: white;
+    @include mobile {
+      bottom: 120px;
+    }
     .img-title {
       font-weight: 800;
       font-size: 40px;
       text-shadow: 4px 4px 11px black;
+      @include mobile {
+        font-size: 25px;
+      }
     }
     .desc {
       margin: 30px 0;
       text-shadow: 0 0 12px black;
+      @include mobile {
+        width: 300px;
+      }
     }
     .buttons {
       display: flex;
