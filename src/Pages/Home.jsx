@@ -17,7 +17,8 @@ export const Home = ({ type }) => {
           {
             headers: {
               token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGRjZjhiMWI0NmU3MjkyMTdhOTdjZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MzczNjI4NCwiZXhwIjoxNjYzOTk1NDg0fQ.sUzSpkt74Pa-UtekQrdudT7G-ArNQR-hwYw248wkKy0",
+                "Bearer " +
+                JSON.parse(localStorage.getItem("user")).accessToken,
             },
           }
         );
